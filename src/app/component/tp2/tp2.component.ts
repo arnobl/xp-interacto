@@ -1,6 +1,5 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {DataService} from '../../service/data.service';
-import {AnonCmd, clicksBinder, LogLevel} from 'interacto';
 
 @Component({
     selector: 'app-tp2',
@@ -15,11 +14,5 @@ export class Tp2Component implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        clicksBinder(3)
-            .on(this.triple.nativeElement)
-            .toProduce(i => new AnonCmd(() => this.dataService.setNewRandomColor()))
-            .log(LogLevel.binding)
-            .preventDefault()
-            .bind();
     }
 }
